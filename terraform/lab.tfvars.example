@@ -1,0 +1,12 @@
+# Copy to terraform/lab.tfvars (gitignored) and fill in.
+# Every stack reads this file via scripts/tf.sh.
+
+account_id  = "123456789012"     # Terraform refuses to touch any other account
+aws_profile = "lab"
+region      = "ap-southeast-1"
+
+cluster_name       = "eks-lab"
+kubernetes_version = "1.36"
+
+# Who may reach the public EKS API endpoint. curl -s https://checkip.amazonaws.com
+admin_cidrs = ["203.0.113.10/32"]
